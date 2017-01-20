@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+
+    <Button
+        android:id="@+id/btn_qq"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="QQ登陆"/>
+    <Button
+        android:id="@+id/btn_wechat"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="微信登陆"/>
+    <Button
+        android:id="@+id/btn_wechat_share"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="微信分享(好友或朋友圈)"/>
+    <Button
+        android:id="@+id/btn_qq_share"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="qq分享"/>
+    <Button
+        android:id="@+id/btn_wechat_pay"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="微信支付"/>
+    <Button
+        android:id="@+id/btn_ali_pay"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="支付宝支付"/>
+
+</LinearLayout>
