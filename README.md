@@ -1,8 +1,8 @@
 # ThirdUtils
-集成第三方登陆分享(微信/QQ)，第三方支付（支付宝,微信,盛付通）,若要使用此项目，请求改applicationId为你的app，并且添加QQ_ID与WECHAT_ID测试
+集成第三方登陆分享(微信/QQ)，第三方支付（支付宝,微信,盛付通）,若要使用此项目，请将主项目的applicationId改为你的app，并且添加QQ_ID与WECHAT_ID测试
 #使用方式
 
-对于QQ需要在主项目build文件配置如下id,参见主项目build.gradle
+对于QQ需要在主项目build文件配置如下qq_id,将1105787445替换为你的QQ的APPKEY,参见主项目build.gradle
 ```
  manifestPlaceholders = [
                 qq_id: "1105787445"
