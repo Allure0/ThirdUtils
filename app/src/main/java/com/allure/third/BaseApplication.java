@@ -24,8 +24,8 @@ public class BaseApplication extends Application {
         instance = this;
 
         PlatformConfig platformConfig = PlatformConfig.getInstance()
-                .setQqId("1105787445")
-                .setWeChatId("wx24e5ffb1eac128d4")
+                .setQqId("xxx")
+                .setWeChatId("xxxx")
                 .setWeChatSecret("");//如果是服务处理token和code不需要传此参数
 
         PlatformManager.getInstance()
