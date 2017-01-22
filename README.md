@@ -8,7 +8,8 @@
                 qq_id: "1105787445"
         ]
 ```
-
+###效果图
+![image](https://github.com/Allure0/ThirdUtils/blob/master/demo/guide_gif2.gif)
 ###QQ登陆
 ```
      LoginManager .with(MainActivity.this)
