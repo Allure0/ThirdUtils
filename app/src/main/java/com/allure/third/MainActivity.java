@@ -24,10 +24,6 @@ import com.allure.thirdtools.platform.SharePlatform;
 import com.allure.thirdtools.share.ShareUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, Observer {
-
-
-    private String QQ_ID = "xxx";
-    private String WECHAT_ID = "xxx";
     private Button btnLoginQQ;
     private Button btnLoginWeChat;
     private Button btnWechatShare;
@@ -165,13 +161,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_qq://QQ登陆
                 LoginManager
                         .with(MainActivity.this)
-                        .qqId(QQ_ID)
+//                        .qqId(QQ_ID)
                         .thirdLogin(LoginPlatform.PLATFORM_QQ);
                 break;
             case R.id.btn_wechat://微信登陆
                 LoginManager
                         .with(MainActivity.this)
-                        .weChatId(WECHAT_ID)
+//                        .weChatId(WECHAT_ID)
                         .thirdLogin(LoginPlatform.PLATFORM_WECHAT);
                 break;
 
@@ -180,14 +176,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         BaseApplication.getInstance(), text, text, imgUrl, url,
                         BitmapFactory.decodeResource(BaseApplication.getInstance().getResources(),
                                 R.drawable.ic_launcher)
-                ).shareToWX(MainActivity.this, WECHAT_ID, ShareUtils.WECHAT_CIRCLE);
+                ).shareToWX(MainActivity.this, ShareUtils.WECHAT_CIRCLE);
                 break;
             case R.id.btn_qq_share://QQ分享
                 ShareUtils.initShareUtils(
                         BaseApplication.getInstance(), text, text, imgUrl, url,
                         BitmapFactory.decodeResource(BaseApplication.getInstance().getResources(),
                                 R.drawable.ic_launcher)
-                ).shareToQQ(MainActivity.this, QQ_ID, "测试啦");
+                ).shareToQQ(MainActivity.this, "测试啦");
                 break;
             case R.id.btn_wechat_pay://微信支付
                 WxPayBean wxPayBean = new WxPayBean();
@@ -199,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                wxPayBean.setTimestamp(map.get("timestamp"));
 //                wxPayBean.setSign(map.get("sign"));
                 PayManager.with(MainActivity.this)
-                        .wxPay(WECHAT_ID, wxPayBean);
+                        .wxPay(wxPayBean);
 
                 break;
             case R.id.btn_ali_pay://支付宝支付

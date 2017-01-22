@@ -6,8 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import com.allure.thirdtools.R;
-import com.allure.thirdtools.login.WxApiCreate;
+import com.allure.thirdtools.PlatformManager;
 import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
@@ -53,9 +52,9 @@ public class ShareUtils {
     }
 
     // 分享到微信朋友圈或者好友 0是朋友圈，1是好友
-    public void shareToWX(Context context, String wxId, final int flag) {
-        IWXAPI api = WxApiCreate.getInstance().setWxId(wxId).getWxApi(context);
-
+    public void shareToWX(Context context, final int flag) {
+//        IWXAPI api = WxApiCreate.getInstance().setWxId(wxId).getWxApi(context);
+        IWXAPI api= PlatformManager.getInstance().getIwxApi();
         if (api.isWXAppSupportAPI()) {
             WXWebpageObject webpage = new WXWebpageObject();
             webpage.webpageUrl = shareUrl;
@@ -79,10 +78,9 @@ public class ShareUtils {
     }
 
     // 分享给QQ好友以及QQ空间
-    public void shareToQQ(Context context, String qqId,String appName) {
+    public void shareToQQ(Context context,String appName) {
         Tencent mTencent = null;
-        if (mTencent == null)
-            mTencent = Tencent.createInstance(qqId, getActiivtyContext(context));
+        mTencent=PlatformManager.getInstance().getTencent();
         Bundle bundle = new Bundle();
         bundle.putString("title", shareTitle);// 标题
         bundle.putString("imageUrl", picUrl);
@@ -92,7 +90,7 @@ public class ShareUtils {
         mTencent.shareToQQ((Activity) context, bundle, null);
     }
 
-    public static Activity getActiivtyContext(Object object) {
+    public static Activity getActivtyContext(Object object) {
         if (object instanceof Activity) {
             return (Activity) object;
         } else if (object instanceof Fragment) {

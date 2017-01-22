@@ -22,8 +22,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile rootProject.ext.dependencies.appcompatV7
     //QQ 相关SDK
-    compile files('libs/mta-sdk-1.6.2.jar')
-    compile files('libs/open_sdk_r5778.jar')
-    compile files('libs/libammsdk.jar')
-    compile files('libs/alipaySdk-20161222.jar')
+    compile files('libs/mta-sdk-1.6.2.jar')//QQ
+    compile files('libs/open_sdk_r5778.jar')//QQ
+    compile files('libs/libammsdk.jar')//微信
+    compile files('libs/alipaySdk-20161222.jar')//支付宝
 }

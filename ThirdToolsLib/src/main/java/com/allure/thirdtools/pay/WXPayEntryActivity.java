@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.allure.thirdtools.login.WxApiCreate;
+import com.allure.thirdtools.PlatformManager;
 import com.allure.thirdtools.observer.LoginEvent;
 import com.allure.thirdtools.platform.PayPlatform;
 import com.tencent.mm.sdk.constants.ConstantsAPI;
@@ -24,7 +24,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            WxApiCreate.getInstance().getWxApi(WXPayEntryActivity.this).handleIntent(getIntent(), this);
+            PlatformManager.getInstance().getIwxApi().handleIntent(getIntent(),this);
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -35,7 +35,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
         super.onNewIntent(intent);
         Log.e("WXPayEntryActivity", "onNewIntent");
         setIntent(intent);
-        WxApiCreate.getInstance().getWxApi(WXPayEntryActivity.this).handleIntent(intent, this);
+        PlatformManager.getInstance().getIwxApi().handleIntent(getIntent(),this);
     }
 
     @Override

@@ -47,5 +47,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile rootProject.ext.dependencies.appcompatV7
-    compile project(':ThirdToolsLib')
+    compile project(':ThirdToolsLib'){
+    }
+
+
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.allure.thirdtools.PlatformManager;
 import com.allure.thirdtools.bean.LoginResult;
 import com.allure.thirdtools.bean.token.QQTokenBean;
 import com.allure.thirdtools.bean.userinfo.QQUserInfoBean;
@@ -26,16 +27,13 @@ public class QQActivity extends AppCompatActivity {
 
     private Tencent mTencent;
     private MyListener mListener;
-    private String qqId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        qqId = this.getIntent().getExtras().getString("qqId");
         mListener = new MyListener();
-        if (mTencent == null) {
-            mTencent = Tencent.createInstance(qqId, this);
-        }
+
+        mTencent= PlatformManager.getInstance().getTencent();
         QQLogin();
     }
 
