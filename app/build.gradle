@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
-
     defaultConfig {
         applicationId "com.allure.third"
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -11,7 +10,7 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName  rootProject.ext.android.versionName
         manifestPlaceholders = [
-                qq_id: "1105787445"
+                qq_id: "1105787445",
         ]
     }
 
@@ -47,8 +46,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile rootProject.ext.dependencies.appcompatV7
-    compile project(':ThirdToolsLib'){
-    }
+    compile project(':ThirdToolsLib')
 
 
 }

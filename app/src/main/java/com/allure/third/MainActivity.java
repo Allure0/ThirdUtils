@@ -161,13 +161,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_qq://QQ登陆
                 LoginManager
                         .with(MainActivity.this)
-//                        .qqId(QQ_ID)
                         .thirdLogin(LoginPlatform.PLATFORM_QQ);
                 break;
             case R.id.btn_wechat://微信登陆
                 LoginManager
                         .with(MainActivity.this)
-//                        .weChatId(WECHAT_ID)
                         .thirdLogin(LoginPlatform.PLATFORM_WECHAT);
                 break;
 
