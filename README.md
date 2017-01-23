@@ -3,12 +3,14 @@
 集成第三方登陆分享(微信/QQ)，第三方支付（支付宝,微信,盛付通）
 本Demo并不能直接使用，若要使用此项目，请将主项目的applicationId改为你的包名，signingConfigs配置签名配置
 #使用方式
- 主项目的gradle.properties里必须配置isCompile,默认为true,**true**表示依赖使用libs的第三包，
- false表示使用你自己的第三方jar包
- ```
- isCompile=false
- ```
- 
+ - 主项目的gradle.properties里必须配置isCompile,默认为true
+
+
+    | 属性 | 解释  |
+    | :---------: | :------: |
+    | true   | 使用libs里的第三包    |
+    | false   | 自行选择功能与第三方jar包   |
+
  例:只需要使用支付宝的支付功能：
  主项目build放入最新的支付宝jar包:
  ```
