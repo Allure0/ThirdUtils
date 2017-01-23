@@ -26,7 +26,6 @@ dependencies {
       compile files('libs/open_sdk_r5778.jar')//QQ
       compile files('libs/libammsdk.jar')//微信
       compile files('libs/alipaySdk-20161222.jar')//支付宝
-      compile  'com.allure0:LMBanners:1.0.8'
   }else{
       provided files('libs/mta-sdk-1.6.2.jar')//QQ
       provided files('libs/open_sdk_r5778.jar')//QQ
