@@ -1,9 +1,14 @@
-# ThirdUtils
-
+# ThirdToolsLib
 集成第三方登陆分享(微信/QQ)，第三方支付（支付宝,微信,盛付通）
 本Demo并不能直接使用，若要使用此项目，请将主项目的applicationId改为你的包名，signingConfigs配置签名配置
 #使用方式
- - 主项目的gradle.properties里必须配置isCompile,默认为true
+gradle引入：
+
+```
+compile 'com.allure0:ThirdToolsLib:1.0.0'
+
+```
+ - **主项目的gradle.properties里必须配置isCompile,默认填写true,参见demo**
 
 
     | 属性 | 解释  |
@@ -22,7 +27,7 @@
  ```
  gradle.properties配置：
  ```
-  isCompile=false
+  isCompile=true
  ```
  
 对于QQ需要在主项目build文件配置如下qq_id,将1105787445替换为你的QQ的APPKEY,参见主项目build.gradle
