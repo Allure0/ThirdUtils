@@ -29,8 +29,8 @@ dependencies {
 //  }else{
       provided files('libs/mta-sdk-1.6.2.jar')//QQ
       provided files('libs/open_sdk_r5778.jar')//QQ
-//      provided files('libs/libammsdk.jar')//微信
-    provided 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+      provided files('libs/libammsdk.jar')//微信
+//    provided 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
       provided files('libs/alipaySdk-20161222.jar')//支付宝
 //  }
 
