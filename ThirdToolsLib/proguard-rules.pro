@@ -15,3 +15,21 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-libraryjars libs/alipaySdk-20161222.jar
+-keep class com.alipay.android.app.IAlixPay{*;}
+-keep class com.alipay.android.app.IAlixPay$Stub{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
+-keep class com.alipay.sdk.app.PayTask{ public *;}
+-keep class com.alipay.sdk.app.AuthTask{ public *;}
+-keep class com.alipay.mobilesecuritysdk.*
+-keep class com.ut.*
+-keep class com.alipay.sdk.*
+-keep class com.alipay.*
+
+
+#-libraryjars libs/mta-sdk-1.6.2.jar
+#-libraryjars libs/open_sdk_r5778.jar
+#-keep class com.tencent.mm.sdk.*
+
+
