@@ -5,31 +5,10 @@
 gradle引入：
 
 ```
-compile 'com.allure0:ThirdToolsLib:1.0.0'
+compile 'com.allure0:ThirdToolsLib:1.0.1'
 
 ```
- - **主项目的gradle.properties里必须配置isCompile,默认true,参见demo**
-
-
-    | 属性 | 解释  |
-    | :---------: | :------: |
-    | true   | 使用libs里的第三包    |
-    | false   | 自行选择功能与第三方jar包   |
-
-----------
- 例:只需要使用支付宝的支付功能：
- 主项目build放入最新的支付宝jar包:
- ```
- dependencies {
-   ···
- compile files('libs/alipaySdk-20161222.jar')   
-   ···
-}
- ```
- gradle.properties配置：
- ```
-  isCompile=false
- ```
+ 
  ------
  
 对于QQ需要在主项目build文件配置如下qq_id,将1105787445替换为你的QQ的APPKEY,参见主项目build.gradle
