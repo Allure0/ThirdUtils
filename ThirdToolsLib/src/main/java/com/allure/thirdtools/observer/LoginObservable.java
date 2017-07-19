@@ -1,5 +1,7 @@
 package com.allure.thirdtools.observer;
 
+import android.util.Log;
+
 import com.allure.thirdtools.bean.LoginResult;
 import com.allure.thirdtools.platform.LoginPlatform;
 import com.allure.thirdtools.platform.PayPlatform;
@@ -15,10 +17,12 @@ import java.util.ArrayList;
 public class LoginObservable implements Observable {
     private ArrayList<Observer> observers;
 
-    public  void returnNull(){
+    public  boolean checkNull(){
         if (observers == null || observers.size() <= 0) {
-            return;
+            Log.e("observers","observers为null或者size<=0,请先注册");
+            return true;
         }
+        return false;
     }
     @Override
     public void addObserver(Observer observer) {
@@ -30,13 +34,17 @@ public class LoginObservable implements Observable {
 
     @Override
     public void removeObserver(Observer observer) {
-        returnNull();
+        if(checkNull()){
+            return;
+        }
         observers.remove(observer);
     }
 
     @Override
     public void successObservers(Object obj, LoginPlatform loginPlatform, LoginResult loginResult) {
-        returnNull();
+        if(checkNull()){
+            return;
+        }
         for (Observer observer : observers) {
             observer.thirdLoginSuccess(obj,loginPlatform,loginResult);
         }
@@ -44,7 +52,9 @@ public class LoginObservable implements Observable {
 
     @Override
     public void failedObservers(Object obj,LoginPlatform loginPlatform) {
-        returnNull();
+        if(checkNull()){
+            return;
+        }
         for (Observer observer : observers) {
             observer.thirdLoginFailed(obj,loginPlatform);
         }
@@ -52,7 +62,9 @@ public class LoginObservable implements Observable {
 
     @Override
     public void cancelObservers(LoginPlatform loginPlatform) {
-        returnNull();
+        if(checkNull()){
+            return;
+        }
         for (Observer observer : observers) {
             observer.thirdLoginCancel(loginPlatform);
         }
@@ -60,14 +72,16 @@ public class LoginObservable implements Observable {
 
     @Override
     public void shareSuccess(SharePlatform sharePlatform) {
-        returnNull();
+        checkNull();
         for (Observer observer : observers) {
             observer.shareSuccess(sharePlatform);
         }
     }
     @Override
     public void shareFailed(SharePlatform sharePlatform) {
-        returnNull();
+        if(checkNull()){
+            return;
+        }
         for (Observer observer : observers) {
             observer.shareFailed(sharePlatform);
         }
@@ -75,7 +89,9 @@ public class LoginObservable implements Observable {
 
     @Override
     public void paySuccess(PayPlatform payPlatform) {
-        returnNull();
+        if(checkNull()){
+            return;
+        }
         for (Observer observer : observers) {
             observer.paySuccess(payPlatform);
         }
@@ -83,7 +99,9 @@ public class LoginObservable implements Observable {
 
     @Override
     public void payFailed(PayPlatform payPlatform) {
-        returnNull();
+        if(checkNull()){
+            return;
+        }
         for (Observer observer : observers) {
             observer.payFailed(payPlatform);
         }
