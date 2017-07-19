@@ -7,7 +7,7 @@
 gradle引入：
 
 ```
-compile 'com.allure0:ThirdToolsLib:1.0.1'
+compile 'com.allure0:ThirdToolsLib:1.0.2'
 
 ```
  
