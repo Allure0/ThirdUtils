@@ -1,4 +1,12 @@
-# ThirdToolsLib
+# 此项目废弃,不再维护,有需要请使用另外2个开源项目
+
+[第三方登录（QQ/微信/新浪微博）](https://github.com/Allure0/ThirdLoginSDK)
+
+
+[第三方支付（支付宝/微信）](https://github.com/Allure0/ThirdPaySDK)
+
+
+
 集成第三方登陆分享(微信/QQ)，第三方支付（支付宝,微信,盛付通）
 本Demo并不能直接使用，若要使用此项目，请将主项目的applicationId改为你的包名，signingConfigs配置签名配置
 
